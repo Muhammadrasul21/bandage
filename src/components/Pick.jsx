@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pick = () => {
   return (
-    <div className='container'>Pick</div>
+    <div className='container'>salom</div>
   )
 }
 
