@@ -1,11 +1,18 @@
 import React from "react";
 import { IoCallOutline } from "react-icons/io5";
 import { CgMail } from "react-icons/cg";
-import { FaInstagram, FaYoutube, FaFacebook, FaTwitter, FaUser, FaShoppingCart, FaRegHeart  } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaFacebook,
+  FaTwitter,
+  FaUser,
+  FaShoppingCart,
+  FaRegHeart,
+} from "react-icons/fa";
 import { navItems } from "@/static";
 import { CiSearch } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
-
 
 const Header = () => {
   return (
@@ -40,28 +47,30 @@ const Header = () => {
 
       <div className="flex items-center justify-between px-8 py-5">
         <div className="flex items-center gap-[119px]">
-        <p className="font-bold text-2xl">Bandage</p>
+          <p className="font-bold text-2xl">Bandage</p>
           <ul className="hidden md:flex gap-4 font-bold text-[14px] leading-6 text-[#737373]">
-          {
-            navItems?.map((item, inx)=>(
-                <li key={inx} className="hover:text-black transitio duration-300 ease-in-out cursor-pointer">{item}</li>
-              ))
-            }
-            </ul>
+            {navItems?.map((item, inx) => (
+              <li
+                key={inx}
+                className="hover:text-black transitio duration-300 ease-in-out cursor-pointer"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
-
 
         <div className="flex text-[#23A6F0]  items-center gap-5">
           <div className="hidden sm:flex items-center gap-1">
-            <FaUser/>
+            <FaUser />
             <p className="font-bold text-[14px]">Login / Register</p>
           </div>
 
           <div className="flex gap-4 items-center">
-            <CiSearch/>
-            <FaShoppingCart/>
-            <FaRegHeart/>
-            <GiHamburgerMenu className="flex sm:hidden"/>
+            <CiSearch />
+            <FaShoppingCart />
+            <FaRegHeart />
+            <GiHamburgerMenu className="flex sm:hidden" />
           </div>
         </div>
       </div>
