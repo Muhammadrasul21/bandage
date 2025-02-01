@@ -48,7 +48,7 @@ const Hero = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="w-full h-[716px] p-10 flex justify-center gap-10 text-white"
+          className="w-full h-[716px] px-10 flex justify-center gap-10 text-white"
         >
           <div className="flex flex-col justify-center text-center sm:text-start sm:items-star gap-9 py-14 ">
             <p>SUMMER 2020</p>
