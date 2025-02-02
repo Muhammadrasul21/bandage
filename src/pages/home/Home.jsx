@@ -1,3 +1,4 @@
+import Cards from "@/components/Cards";
 import Hero from "@/components/Hero";
 import Pick from "@/components/Pick";
 import React from "react";
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <Hero />
       <Pick/>
+      <Cards/>
     </>
   );
 };
