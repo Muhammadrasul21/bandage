@@ -58,7 +58,8 @@ const Hero = () => {
             <p className="font-normal text-xl w-[340px]">
               We know how large objects will act, but things on a small scale.
             </p>
-            <div>
+            <div className="flex items-center gap-[34px]">
+              <p className="font-bold text-2xl">$16.48</p>
               <button className="px-10 py-4 bg-[#2DC071] font-bold text-2xl rounded-[5px]">
                 SHOP NOW
               </button>
