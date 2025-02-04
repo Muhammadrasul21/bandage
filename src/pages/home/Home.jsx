@@ -1,6 +1,4 @@
 import Cards from "@/components/Cards";
-import Footer from "@/components/Footer";
-import Footerbottom from "@/components/Footerbottom";
 import FooterHead from "@/components/FooterHead";
 import Hero from "@/components/Hero";
 import Info from "@/components/Info";

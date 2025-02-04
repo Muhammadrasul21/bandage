@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ const Cards = () => {
         setProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error("Mahsulotlarni yuklashda xatolik:", error);
+        console.error(error);
       }
     };
 
@@ -33,38 +34,19 @@ const Cards = () => {
 
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 place-items-center">
-          <div className="w-[250px] h-[280px] flex flex-col gap-5 p-4 bg-white rounded-lg shadow-lg animate-pulse">
-            <div className="w-full h-[150px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-3/4 h-[30px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-full h-[20px] bg-gray-300 rounded-md"></div>
-            <div className="w-5/6 h-[20px] bg-gray-300 rounded-md"></div>
-          </div>
-          <div className="w-[250px] h-[280px] flex flex-col gap-5 p-4 bg-white rounded-lg shadow-lg animate-pulse">
-            <div className="w-full h-[150px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-3/4 h-[30px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-full h-[20px] bg-gray-300 rounded-md"></div>
-            <div className="w-5/6 h-[20px] bg-gray-300 rounded-md"></div>
-          </div>
-          <div className="w-[250px] h-[280px] flex flex-col gap-5 p-4 bg-white rounded-lg shadow-lg animate-pulse">
-            <div className="w-full h-[150px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-3/4 h-[30px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-full h-[20px] bg-gray-300 rounded-md"></div>
-            <div className="w-5/6 h-[20px] bg-gray-300 rounded-md"></div>
-          </div>
-          <div className="w-[250px] h-[280px] flex flex-col gap-5 p-4 bg-white rounded-lg shadow-lg animate-pulse">
-            <div className="w-full h-[150px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-3/4 h-[30px] bg-gray-300 rounded-md"></div>
-
-            <div className="w-full h-[20px] bg-gray-300 rounded-md"></div>
-            <div className="w-5/6 h-[20px] bg-gray-300 rounded-md"></div>
-          </div>
+          {Array(4)
+            .fill(0)
+            .map((_, index) => (
+              <div
+                key={index}
+                className="w-[250px] h-[280px] flex flex-col gap-5 p-4 bg-white rounded-lg shadow-lg animate-pulse"
+              >
+                <div className="w-full h-[150px] bg-gray-300 rounded-md"></div>
+                <div className="w-3/4 h-[30px] bg-gray-300 rounded-md"></div>
+                <div className="w-full h-[20px] bg-gray-300 rounded-md"></div>
+                <div className="w-5/6 h-[20px] bg-gray-300 rounded-md"></div>
+              </div>
+            ))}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-[80px]">
@@ -73,12 +55,14 @@ const Cards = () => {
               key={product.id}
               className="border rounded-lg shadow-lg p-4 flex flex-col items-center text-center bg-white"
             >
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-32 h-32 object-contain mb-4"
-              />
-              <h3 className="font-bold ">{product.title.slice(0, 15)}...</h3>
+              <Link to={`/detail/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-32 h-32 object-contain mb-4 cursor-pointer"
+                />
+              </Link>
+              <h3 className="font-bold">{product.title.slice(0, 15)}...</h3>
               <p className="text-[#23856D] text-[14px]">${product.price}</p>
               <div className="flex gap-[6px] mt-[10px]">
                 <div className="w-4 h-4 rounded-full bg-[#23A6F0]"></div>

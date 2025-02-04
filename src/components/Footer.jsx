@@ -27,7 +27,7 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Your Email"
-                className="pt-[15px] pb-[15px] bg-inherit"
+                className="pt-[15px] pb-[15px] bg-inherit outline-none"
               />
               <button className="bg-[#23A6F0] text-white px-[22px] py-4 rounded-r-md">
                 Subscribe
