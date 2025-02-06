@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import Layout from "./layout/Layout";
 import Detail from "./pages/detail/Detail";
 import Wishlist from "./pages/wishlist/Wishlist";
-import NotFound from "./pages/notFound/NotFound"
+// import NotFound from "./pages/notFound/NotFound"
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/detail/:id" element={<Detail />} />
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
       </Layout>
