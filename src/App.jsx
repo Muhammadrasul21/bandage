@@ -4,8 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Layout from "./layout/Layout";
 import Detail from "./pages/detail/Detail";
-import NotFound from "./pages/not-found/notFound";
 import Wishlist from "./pages/wishlist/Wishlist";
+import NotFound from "./pages/notFound/NotFound"
 
 function App() {
   return (
