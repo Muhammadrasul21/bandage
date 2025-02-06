@@ -2,6 +2,7 @@ import React from "react";
 import bg from "../assets/hero.jpg";
 import herobg from "../assets/herobg.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules"; // ⬅️ Autoplay modulini import qildik
 import "swiper/css";
 import boy from "../assets/boy.png";
 
@@ -15,6 +16,7 @@ const Hero = () => {
         delay: 3000,
         disableOnInteraction: false,
       }}
+      modules={[Autoplay]} // ⬅️ Swiper autoplay moduli shu yerda chaqirilishi kerak
     >
       <SwiperSlide>
         <div
@@ -41,6 +43,7 @@ const Hero = () => {
           </div>
         </div>
       </SwiperSlide>
+
       <SwiperSlide>
         <div
           style={{

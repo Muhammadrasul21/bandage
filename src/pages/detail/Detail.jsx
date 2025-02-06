@@ -8,6 +8,10 @@ const Detail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo({ behavior: "smooth", left: 0, top: 0 });
+  }, []);
+
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -40,7 +44,7 @@ const Detail = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-16 mt-[80px]">
         <div className="w-full lg:w-[500px] flex justify-center">
           <img
             src={product.image}
@@ -53,7 +57,9 @@ const Detail = () => {
           <h1 className="text-3xl font-bold">{product.title}</h1>
           <p className="text-gray-600 text-lg">{product.description}</p>
 
-          <p className="text-green-600 text-2xl font-semibold">${product.price}</p>
+          <p className="text-green-600 text-2xl font-semibold">
+            ${product.price}
+          </p>
 
           <div className="flex items-center gap-2">
             {Array.from({ length: 5 }, (_, index) => (
@@ -62,7 +68,9 @@ const Detail = () => {
                 className={`text-xl ${index < Math.round(product.rating.rate) ? "text-yellow-400" : "text-gray-300"}`}
               />
             ))}
-            <span className="text-gray-600 text-lg">({product.rating.count} reviews)</span>
+            <span className="text-gray-600 text-lg">
+              ({product.rating.count} reviews)
+            </span>
           </div>
 
           <div className="flex gap-4">
